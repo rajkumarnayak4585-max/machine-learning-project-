@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raj ML Lab | Machine Learning</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#080d19;--panel:#111a2d;--text:#f2f6ff;
+  --muted:#a5b2ca;--blue:#65a9ff;--cyan:#55f0d0;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,sans-serif;background:var(--bg);
+  color:var(--text);line-height:1.6
+}
+header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 7%;border-bottom:1px solid #243049;
+  position:sticky;top:0;background:#080d19ed;z-index:10
+}
+.logo{font-size:22px;font-weight:bold;color:var(--cyan)}
+nav{display:flex;gap:22px}
+nav a{color:var(--text);text-decoration:none;font-size:14px}
+nav a:hover{color:var(--cyan)}
+section{padding:75px 7%}
+.hero{
+  min-height:510px;display:grid;grid-template-columns:1.2fr 1fr;
+  align-items:center;gap:35px;
+  background:radial-gradient(ellipse at 80% 30%,#183d5c 0%,#080d19 65%)
+}
+.tag{color:var(--cyan);font-size:13px;letter-spacing:2px}
+h1{font-size:clamp(36px,5vw,62px);line-height:1.12;margin:18px 0}
+h1 span{color:var(--cyan)}
+p{color:var(--muted);margin:12px 0}
+.btn{
+  display:inline-block;padding:12px 19px;border-radius:9px;
+  background:var(--cyan);color:#07121b;text-decoration:none;
+  font-weight:bold;border:0;cursor:pointer;margin:12px 8px 0 0
+}
+.btn.secondary{background:#192841;color:white;border:1px solid #354966}
+.visual{
+  background:linear-gradient(145deg,#14233d,#0c1425);
+  border:1px solid #29415b;border-radius:22px;padding:25px;
+  box-shadow:0 20px 70px #0005
+}
+.visual h3{margin-bottom:18px}
+.bar{
+  height:12px;border-radius:20px;background:#253752;
+  overflow:hidden;margin:9px 0 18px
+}
+.bar span{display:block;height:100%;border-radius:20px;
+  background:linear-gradient(90deg,#65a9ff,#55f0d0)}
+.section-title{text-align:center;margin-bottom:35px}
+.section-title h2{font-size:32px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  padding:23px;background:var(--panel);border:1px solid #25334b;
+  border-radius:15px;transition:.2s
+}
+.card:hover{transform:translateY(-4px);border-color:var(--cyan)}
+.icon{font-size:30px}
+.card h3{margin:12px 0}
+.predict-layout{
+  display:grid;grid-template-columns:1fr 1fr;gap:25px
+}
+form,.result{
+  padding:25px;background:var(--panel);
+  border:1px solid #25334b;border-radius:16px
+}
+label{display:block;margin:14px 0 6px;font-size:14px}
+input,select{
+  width:100%;padding:12px;border-radius:8px;
+  border:1px solid #35445f;background:#0b1322;
+  color:white;font-size:15px
+}
+input:focus,select:focus{outline:2px solid var(--cyan)}
+.result{display:flex;flex-direction:column;justify-content:center}
+.price{font-size:clamp(27px,4vw,40px);color:var(--cyan);font-weight:bold}
+.note{font-size:12px;color:#92a1ba;margin-top:15px}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.stat{background:#0b1425;padding:15px;border-radius:10px;text-align:center}
+.stat strong{display:block;color:var(--cyan);font-size:22px}
+footer{text-align:center;padding:30px;border-top:1px solid #243049}
+@media(max-width:760px){
+  header{padding:15px 5%;flex-wrap:wrap;gap:12px}
+  nav{gap:12px;flex-wrap:wrap}
+  nav a{font-size:12px}
+  section{padding:55px 5%}
+  .hero,.predict-layout{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="logo">🧠 Raj ML Lab</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#learn">Learn ML</a>
+    <a href="#project">Project</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <div class="tag">WELCOME TO THE WORLD OF AI</div>
+    <h1>Learn <span>Machine Learning</span> & Build the Future.</h1>
+    <p>
+      नमस्ते! मैं Raj Kumar Nayak हूँ। यह मेरी Machine Learning
+      प्रोजेक्ट वेबसाइट है। यहाँ AI, डेटा और प्रेडिक्शन को आसान तरीके
+      से समझें।
+    </p>
+    <a class="btn" href="#project">Try Price Predictor →</a>
+    <a class="btn secondary" href="#learn">Explore ML</a>
+  </div>
+
+  <div class="visual">
+    <h3>📊 Machine Learning Dashboard</h3>
+    <p>Data Processing</p>
+    <div class="bar"><span style="width:90%"></span></div>
+    <p>Pattern Recognition</p>
+    <div class="bar"><span style="width:75%"></span></div>
+    <p>Prediction Demo</p>
+    <div class="bar"><span style="width:85%"></span></div>
+    <div class="stat-grid">
+      <div class="stat"><strong>AI</strong><small>Technology</small></div>
+      <div class="stat"><strong>ML</strong><small>Learning</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="learn">
+  <div class="section-title">
+    <div class="tag">LEARN SOMETHING NEW</div>
+    <h2>Machine Learning क्या है?</h2>
+    <p>कंप्यूटर को डेटा से सीखने और अनुमान लगाने की तकनीक।</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">📚</div>
+      <h3>Supervised Learning</h3>
+      <p>लेबल वाले डेटा से मॉडल को सिखाया जाता है। उदाहरण: घर की कीमत का अनुमान।</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔎</div>
+      <h3>Unsupervised Learning</h3>
+      <p>मॉडल बिना लेबल वाले डेटा में समूह और पैटर्न खोजता है।</p>
+    </div>
+    <div class="card">
+      <div class="icon">📈</div>
+      <h3>Linear Regression</h3>
+      <p>डेटा के बीच संबंध सीखकर संख्यात्मक परिणाम का अनुमान लगाने की विधि।</p>
+    </div>
+  </div>
+</section>
+
+<section id="project">
+  <div class="section-title">
+    <div class="tag">MY ML PROJECT</div>
+    <h2>🏠 House Price Predictor</h2>
+    <p>घर की जानकारी भरें और प्रेडिक्शन डेमो देखें।</p>
+  </div>
+
+  <div class="predict-layout">
+    <form id="priceForm">
+      <h3>घर की जानकारी</h3>
+
+      <label for="area">घर का क्षेत्रफल (वर्ग फुट)</label>
+      <input id="area" type="number" min="100" max="20000"
+        value="1200" required>
+
+      <label for="bedrooms">Bedrooms</label>
+      <select id="bedrooms">
+        <option value="1">1 Bedroom</option>
+        <option value="2" selected>2 Bedrooms</option>
+        <option value="3">3 Bedrooms</option>
+        <option value="4">4 Bedrooms</option>
+        <option value="5">5 Bedrooms</option>
+      </select>
+
+      <label for="age">घर की उम्र (वर्ष)</label>
+      <input id="age" type="number" min="0" max="150"
+        value="5" required>
+
+      <label for="location">स्थान</label>
+      <select id="location">
+        <option value="1">छोटा शहर / ग्रामीण क्षेत्र</option>
+        <option value="1.5" selected>मध्यम शहर</option>
+        <option value="2.5">बड़ा शहर</option>
+      </select>
+
+      <button class="btn" type="submit">Predict Price →</button>
+      <button class="btn secondary" type="reset">Reset</button>
+    </form>
+
+    <div class="result" aria-live="polite">
+      <div class="tag">PREDICTION RESULT</div>
+      <h3>अनुमानित घर की कीमत</h3>
+      <div class="price" id="price">₹ 27,00,000</div>
+      <p id="message">जानकारी बदलकर नया डेमो परिणाम देखें।</p>
+      <div class="stat-grid">
+        <div class="stat">
+          <strong id="areaOut">1200</strong>
+          <small>वर्ग फुट</small>
+        </div>
+        <div class="stat">
+          <strong id="bedOut">2</strong>
+          <small>Bedrooms</small>
+        </div>
+      </div>
+      <p class="note">
+        जरूरी: यह केवल उदाहरण के लिए बनाया गया गणितीय डेमो है।
+        यह प्रशिक्षित ML मॉडल नहीं है और वास्तविक बाजार मूल्य नहीं बताता।
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-title">
+    <div class="tag">ABOUT THE DEVELOPER</div>
+    <h2>Meet the Student Developer</h2>
+  </div>
+  <div class="card" style="max-width:650px;margin:auto;text-align:center">
+    <div class="icon">👨‍💻</div>
+    <h3>Raj Kumar Nayak</h3>
+    <p>Class 9th Student | Young Learner | Future Developer</p>
+    <p>
+      मेरा लक्ष्य नई टेक्नोलॉजी सीखना, वेबसाइट बनाना और
+      Artificial Intelligence के प्रोजेक्ट बनाना है।
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Raj ML Lab | Made with ❤️ by Raj Kumar Nayak</p>
+  <p>Educational project for learning Machine Learning.</p>
+</footer>
+
+<script>
+const form = document.getElementById("priceForm");
+
+function predictPrice(event) {
+  if (event) event.preventDefault();
+
+  const area = Number(document.getElementById("area").value);
+  const bedrooms = Number(document.getElementById("bedrooms").value);
+  const age = Number(document.getElementById("age").value);
+  const location = Number(document.getElementById("location").value);
+
+  if (!Number.isFinite(area) || area < 100 || area > 20000 ||
+      !Number.isFinite(age) || age < 0 || age > 150) {
+    document.getElementById("message").textContent =
+      "कृपया सही जानकारी भरें।";
+    return;
+  }
+
+  // केवल शैक्षिक डेमो का नियम, प्रशिक्षित ML मॉडल नहीं।
+  const basePrice = area * 1500;
+  const bedroomBonus = bedrooms * 100000;
+  const locationFactor = location;
+  const ageFactor = Math.max(0.5, 1 - age * 0.005);
+
+  const predicted = Math.round(
+    (basePrice + bedroomBonus) * locationFactor * ageFactor
+  );
+
+  document.getElementById("price").textContent =
+    predicted.toLocaleString("en-IN", {
+      style: "currency",
+      currency: "INR",
+      maximumFractionDigits: 0
+    });
+
+  document.getElementById("areaOut").textContent = area;
+  document.getElementById("bedOut").textContent = bedrooms;
+  document.getElementById("message").textContent =
+    "डेमो परिणाम तैयार है। यह वास्तविक बाजार मूल्य नहीं है।";
+}
+
+form.addEventListener("submit", predictPrice);
+
+form.addEventListener("reset", function() {
+  setTimeout(predictPrice, 0);
+});
+
+predictPrice();
+</script>
+</body>
+</html>
